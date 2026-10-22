@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101525">
+  <title>Barca vs Madrid</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #0b1020;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      padding: 22px 18px;
+      background: linear-gradient(120deg, #102a67, #65152b);
+      border-bottom: 1px solid #ffffff20;
+    }
+    .brand { font-size: 24px; font-weight: 800; }
+    .brand span { color: #ffd166; }
+    header p { color: #e0e5f2; font-size: 13px; margin-bottom: 0; }
+    main { padding: 18px; max-width: 700px; margin: auto; }
+    .welcome {
+      padding: 20px;
+      border-radius: 18px;
+      background: #171f35;
+      margin-bottom: 22px;
+    }
+    .welcome h1 { font-size: 23px; margin: 0 0 9px; }
+    .welcome p { color: #bdc7dc; line-height: 1.5; font-size: 14px; }
+    .tag {
+      display: inline-block;
+      padding: 7px 10px;
+      border-radius: 20px;
+      background: #283553;
+      color: #ffd166;
+      font-size: 12px;
+    }
+    h2 { font-size: 18px; margin: 24px 0 14px; }
+    .categories {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .card {
+      text-align: left;
+      min-height: 125px;
+      padding: 16px 13px;
+      color: white;
+      background: #171f35;
+      border: 1px solid #293550;
+      border-radius: 16px;
+      cursor: pointer;
+    }
+    .card:active { transform: scale(.98); }
+    .icon { font-size: 27px; }
+    .card h3 { margin: 10px 0 6px; font-size: 15px; }
+    .card p { margin: 0; color: #aebbd3; font-size: 12px; line-height: 1.4; }
+    .featured {
+      background: linear-gradient(135deg, #153a76, #30204f);
+      border-color: #5265a2;
+    }
+    .notice {
+      margin-top: 20px;
+      padding: 15px;
+      background: #141c2e;
+      border-radius: 14px;
+      color: #bdc7dc;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    footer {
+      text-align: center;
+      padding: 25px 15px 90px;
+      color: #8793aa;
+      font-size: 12px;
+    }
+    nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-around;
+      padding: 12px 5px calc(12px + env(safe-area-inset-bottom));
+      background: #11182a;
+      border-top: 1px solid #293550;
+    }
+    nav a {
+      color: #c2cce0;
+      text-decoration: none;
+      font-size: 11px;
+      text-align: center;
+    }
+    nav span { display: block; font-size: 20px; margin-bottom: 4px; }
+    @media (max-width: 350px) {
+      .categories { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">BARCA <span>VS</span> MADRID</div>
+    <p>Dois gigantes. Uma comunidade. Paixão sem limites.</p>
+  </header>
+
+  <main>
+    <section class="welcome" id="inicio">
+      <span class="tag">⚽ A TUA COMUNIDADE DE FUTEBOL</span>
+      <h1>O futebol debate-se aqui.</h1>
+      <p>Notícias, rivalidade, paixão e adeptos dos dois maiores rivais do futebol espanhol.</p>
+    </section>
+
+    <h2>Explora a comunidade</h2>
+
+    <section class="categories">
+      <button class="card" onclick="abrir('Perfil')">
+        <div class="icon">👤</div>
+        <h3>Perfil</h3>
+        <p>A tua identidade de adepto.</p>
+      </button>
+
+      <button class="card" onclick="abrir('Início')">
+        <div class="icon">🏠</div>
+        <h3>Início</h3>
+        <p>Encontra os destaques da comunidade.</p>
+      </button>
+
+      <button class="card featured" onclick="abrir('Central Rival')">
+        <div class="icon">💬</div>
+        <h3>Central Rival</h3>
+        <p>O ponto de encontro dos adeptos.</p>
+      </button>
+
+      <button class="card" onclick="abrir('Bola em Jogo')">
+        <div class="icon">⚽</div>
+        <h3>Bola em Jogo</h3>
+        <p>Jogos, equipas e competições.</p>
+      </button>
+
+      <button class="card" onclick="abrir('Última Hora')">
+        <div class="icon">📰</div>
+        <h3>Última Hora</h3>
+        <p>Novidades importantes do futebol.</p>
+      </button>
+
+      <button class="card" onclick="abrir('Mente de Campeão')">
+        <div class="icon">🏆</div>
+        <h3>Mente de Campeão</h3>
+        <p>Motivação e mentalidade vencedora.</p>
+      </button>
+
+      <button class="card" onclick="abrir('Glória dos Adeptos')">
+        <div class="icon">🔥</div>
+        <h3>Glória dos Adeptos</h3>
+        <p>A paixão e as histórias dos fãs.</p>
+      </button>
+    </section>
+
+    <div class="notice" id="mensagem">
+      <strong>Bem-vindo ao Barca vs Madrid!</strong><br>
+      Esta é a primeira versão visual. As contas, notícias e conversas serão ligadas nas próximas etapas.
+    </div>
+  </main>
+
+  <footer>BARCA VS MADRID · A rivalidade une os adeptos.</footer>
+
+  <nav>
+    <a href="#inicio"><span>🏠</span>Início</a>
+    <a href="#categorias" onclick="abrir('Central Rival')"><span>💬</span>Debate</a>
+    <a href="#inicio" onclick="abrir('Última Hora')"><span>📰</span>Notícias</a>
+    <a href="#inicio" onclick="abrir('Perfil')"><span>👤</span>Perfil</a>
+  </nav>
+
+  <script>
+    function abrir(nome) {
+      const mensagem = document.getElementById('mensagem');
+      mensagem.innerHTML =
+        '<strong>' + nome + '</strong><br>' +
+        'Esta secção faz parte do projeto. Vamos desenvolver as suas funções nas próximas etapas.';
+      mensagem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  </script>
+</body>
+</html>
